@@ -5,7 +5,7 @@ def solution(s):
         stack=[]
         for j in range(n):
             c=s[(i+j)%n]
-            if c =="(" or c =="[" or c =="{":
+            if c =="(" or c =="[" or c =="{":   
                 stack.append(c)
             else:
                 if not stack:
