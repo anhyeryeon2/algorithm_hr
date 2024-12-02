@@ -1,16 +1,21 @@
-let fs = require("fs");
-let input = fs.readFileSync("/dev/stdin").toString().split("\n");
+const input = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n");
 
-let n = Number(input[0].split(' ')[0]);
-let k = Number(input[0].split(' ')[1]);
+const [N, K] = input[0].split(" ").map(Number);
+const coins = input.slice(1).map(Number);
 
-let arr= [];
+let toPay = K;
+let count = 0;
 
-for (let i =1 ;i<=n ; i++) arr.push(Number(input[i]));
-
-let cnt =0;
-for(let i =n-1; i>=0 ; i--){
-  cnt += parseInt(k/arr[i]);
-  k%=arr[i];
+//큰 돈 부터
+for (let coin of coins.reverse()) {
+  if (toPay === 0) break;
+  if (coin <= toPay) {
+    count += Math.floor(toPay / coin);
+    toPay %= coin;
+  }
 }
-console.log(cnt);
+console.log(count);
