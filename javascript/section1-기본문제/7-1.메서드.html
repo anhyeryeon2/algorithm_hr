@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //forEach
+      //   function forEach(predicate,thisArg){
+      //     for(let i=0;i<a.length;i++){
+      //         predicate(a[i],i);
+      //     }
+      //   } 하나하나 탐색하면서 반복 호출한다.
+      a = [10, 11, 12, 13, 14, 15];
+      a.forEach(function (v, i) {
+        console.log(v, i);
+      });
+
+      a = [10, 11, 12, 13, 14, 15];
+      a.forEach(
+        function (v, i) {
+          console.log(v, i);
+        },
+        [1, 2]
+      );
+      //저 [1,2] 배열을 반환
+
+      //map: 요소들 이용해서 새로운 배열 생성한다.
+      a = [10, 11, 12, 13, 14, 15];
+      let answer = a.map(
+        function (v, i) {
+          return v * v; //리턴한 값으로 배열
+        },
+        [1, 2]
+      );
+      console.log(answer);
+      //
+      //map: 요소들 이용해서 새로운 배열 생성한다.
+      a = [10, 11, 12, 13, 14, 15];
+      let answer2 = a.map(
+        function (v, i) {
+          return v * v; //리턴한 값으로 배열
+        },
+        [1, 2]
+      );
+      console.log(answer);
+</script>
+  </body>
+</html>
