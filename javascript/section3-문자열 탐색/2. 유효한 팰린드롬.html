@@ -7,8 +7,14 @@
     <script>
       function solution(s) {
         let answer = "YES";
+        s = s.toLowerCase().replace(/[^a-z]/g, "");
+        //a-z아닌것들은 ''로
+        if (s.split("").reverse().join("") !== s) {
+          return "NO";
+        } else {
+          return "YES";
+        }
       }
-
       let str = "found7, time: study; Yduts; emit, 7Dnuof";
       console.log(solution(str));
     </script>

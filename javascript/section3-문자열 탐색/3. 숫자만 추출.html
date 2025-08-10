@@ -7,6 +7,13 @@
     <script>
       function solution(str) {
         let answer = "";
+        for (let x of str) {
+          if (!isNaN(x)) {
+            // 숫자라면
+            answer += x;
+          }
+        }
+        return answer;
       }
 
       let str = "g0en2T0s8eSoft";
